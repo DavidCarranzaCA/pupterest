@@ -3,9 +3,13 @@ import { View, Text ,TouchableOpacity, StyleSheet, ImageBackground, Icon} from '
 import { LinearGradient } from 'react-native-linear-gradient'
 import { Card, Button, FormLabel, FormInput } from 'react-native-elements';
 
+
 class Login extends React.PureComponent {
-    constructor() {
-        super();
+    static navigationOptions = {
+        header: null
+      };
+    constructor(props) {
+        super(props);
         this.state = {
             userName: '',
             password: ''
@@ -13,7 +17,7 @@ class Login extends React.PureComponent {
     }
 
     onSubmit = e => {
-        console.log(this.state)
+        this.props.navigation.navigate('HomeScreen')
     }
 
     render() {
@@ -21,7 +25,7 @@ class Login extends React.PureComponent {
             <ImageBackground
             style={styles.bgImage}
             blurRadius={1}
-            source={require('../../../imgs/login.jpg')}
+            source={require('../../imgs/login.jpg')}
             >
             <View style={styles.container}>
                 <Card 
