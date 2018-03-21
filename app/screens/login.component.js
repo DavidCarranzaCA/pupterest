@@ -3,9 +3,13 @@ import { View, Text ,TouchableOpacity, StyleSheet, ImageBackground, Icon} from '
 import { LinearGradient } from 'react-native-linear-gradient'
 import { Card, Button, FormLabel, FormInput } from 'react-native-elements';
 
+
 class Login extends React.PureComponent {
-    constructor() {
-        super();
+    static navigationOptions = {
+        header: null
+      };
+    constructor(props) {
+        super(props);
         this.state = {
             userName: '',
             password: ''
@@ -13,7 +17,7 @@ class Login extends React.PureComponent {
     }
 
     onSubmit = e => {
-        console.log(this.state)
+        this.props.navigation.navigate('HomeScreen')
     }
 
     render() {
@@ -21,18 +25,19 @@ class Login extends React.PureComponent {
             <ImageBackground
             style={styles.bgImage}
             blurRadius={1}
-            source={require('../../../imgs/login.jpg')}
+            source={require('../../imgs/login.jpg')}
             >
             <View style={styles.container}>
                 <Card 
                 title="Login"
-                containerStyle={{width: '95%'}}
+                tityleStyle={{fontSize: '300'}}
+                containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
                 >
                
                 <FormLabel>E-mail Address</FormLabel>
                 <FormInput 
                 onChangeText={(userName) => this.setState({userName})} 
-                style={{marginBottom: 50}}
+                style={{marginBottom: 50, color: '#fff'}}
                 placeholder="E-mail Address"
                 />
                 <FormLabel>Password</FormLabel>
@@ -59,6 +64,11 @@ const styles= ({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Lato'
+    },
+    title: {
+        fontWeight: '700',
+        fontSize: 300
     },
     bgImage: {
         flex: 1

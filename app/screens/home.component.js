@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 class Home extends React.PureComponent {
-
+    static navigationOptions = {
+        title: 'Home',
+      };
 
     render() {
         return (
