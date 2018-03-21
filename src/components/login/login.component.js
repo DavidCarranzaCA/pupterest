@@ -26,13 +26,14 @@ class Login extends React.PureComponent {
             <View style={styles.container}>
                 <Card 
                 title="Login"
-                containerStyle={{width: '95%'}}
+                tityleStyle={{fontSize: '300'}}
+                containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
                 >
                
                 <FormLabel>E-mail Address</FormLabel>
                 <FormInput 
                 onChangeText={(userName) => this.setState({userName})} 
-                style={{marginBottom: 50}}
+                style={{marginBottom: 50, color: '#fff'}}
                 placeholder="E-mail Address"
                 />
                 <FormLabel>Password</FormLabel>
@@ -59,6 +60,11 @@ const styles= ({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Lato'
+    },
+    title: {
+        fontWeight: '700',
+        fontSize: 300
     },
     bgImage: {
         flex: 1
