@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text , TouchableOpacity, StyleSheet, ImageBackground, Icon} from 'react-native';
-import { Card, Button, FormLabel } from 'react-native-elements';
+import { View, Text , TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { Card, Button, Icon, FormLabel } from 'react-native-elements';
 import LoginForm from '../components/login.component'
 
 
@@ -30,10 +30,16 @@ class LoginScreen extends React.PureComponent {
             source={require('../../imgs/login.jpg')}
             >
             <View style={styles.container}>
+            <Icon 
+                name="pets"
+                size={40}
+                raised
+                iconStyle={styles.icon}
+            />
                 <Card 
                     title="Login"
                     tityleStyle={{fontSize: '300'}}
-                    containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
+                    containerStyle={{width: '95%', borderRadius: 10}}
                 >
 
                <FormLabel>E-Mail</FormLabel>
@@ -84,6 +90,9 @@ const styles= ({
         height: 50,
         marginTop: 25,
         marginBottom: 25
+    },
+    icon: {
+        color: '#aa1923'
     }
 })
 
