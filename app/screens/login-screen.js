@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text , TouchableOpacity, StyleSheet, ImageBackground, Icon} from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Card, Button, FormLabel } from 'react-native-elements';
+import LoginForm from '../components/login.component'
 
 
 class LoginScreen extends React.PureComponent {
@@ -10,14 +11,16 @@ class LoginScreen extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            userName: '',
-            password: ''
+                name: '',
+                password: ''
         }
     }
 
     onSubmit = e => {
         this.props.navigation.navigate('HomeScreen')
     }
+
+
 
     render() {
         return (
@@ -32,7 +35,21 @@ class LoginScreen extends React.PureComponent {
                     tityleStyle={{fontSize: '300'}}
                     containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
                 >
-               
+
+               <FormLabel>E-Mail</FormLabel>
+               <LoginForm
+               onChangeText={(name) => {this.setState({name})}} 
+               value={this.state.name}
+               placeholder="E-mail"
+               />
+               <FormLabel>Password</FormLabel>
+               <LoginForm
+               onChangeText={(password) => {this.setState({password})}} 
+               value={this.state.password}
+               secureTextEntry={true}
+               placeholder="Password"
+               />
+
                     <TouchableOpacity>
                     <Button
                         title="Login"

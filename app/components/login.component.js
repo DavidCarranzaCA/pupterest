@@ -1,24 +1,19 @@
 import React from 'react';
 import { View } from 'react-native';
-import { FormLabel, FormInput } from 'react-native-elements';
+import { FormInput } from 'react-native-elements';
 
 class LoginForm extends React.PureComponent {
-    
+   constructor(props) {
+       super(props);
+   } 
 
 
     render() {
         return (
             <View>
-            <FormLabel>E-mail Address</FormLabel>
             <FormInput 
-            onChangeText={(userName) => this.setState({userName})} 
+            {...this.props} 
             style={{marginBottom: 50, color: '#fff'}}
-            placeholder="E-mail Address"
-            />
-            <FormLabel>Password</FormLabel>
-            <FormInput 
-            onChangeText={(password) => this.setState({password})}
-            placeholder="Password"
             />
             </View>
         );
