@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text ,TouchableOpacity, StyleSheet, ImageBackground, Icon} from 'react-native';
-import { LinearGradient } from 'react-native-linear-gradient'
-import { Card, Button, FormLabel, FormInput } from 'react-native-elements';
+import { View, Text , TouchableOpacity, StyleSheet, ImageBackground, Icon} from 'react-native';
+import { Card, Button } from 'react-native-elements';
 
 
-class Login extends React.PureComponent {
+class LoginScreen extends React.PureComponent {
     static navigationOptions = {
         header: null
       };
@@ -29,27 +28,16 @@ class Login extends React.PureComponent {
             >
             <View style={styles.container}>
                 <Card 
-                title="Login"
-                tityleStyle={{fontSize: '300'}}
-                containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
+                    title="Login"
+                    tityleStyle={{fontSize: '300'}}
+                    containerStyle={{width: '95%', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 10}}
                 >
                
-                <FormLabel>E-mail Address</FormLabel>
-                <FormInput 
-                onChangeText={(userName) => this.setState({userName})} 
-                style={{marginBottom: 50, color: '#fff'}}
-                placeholder="E-mail Address"
-                />
-                <FormLabel>Password</FormLabel>
-                <FormInput 
-                onChangeText={(password) => this.setState({password})}
-                placeholder="Password"
-                />
                     <TouchableOpacity>
                     <Button
-                    title="Login"
-                    buttonStyle={styles.button}
-                    onPress={e => this.onSubmit(e)}
+                        title="Login"
+                        buttonStyle={styles.button}
+                        onPress={e => this.onSubmit(e)}
                     />
                     </TouchableOpacity>
                 </Card>
@@ -82,4 +70,4 @@ const styles= ({
     }
 })
 
-export default Login
+export default LoginScreen

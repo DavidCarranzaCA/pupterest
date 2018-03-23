@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-class Home extends React.PureComponent {
+class HomeScreen extends React.PureComponent {
     static navigationOptions = {
         title: 'Home',
       };
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Home
+export default HomeScreen
