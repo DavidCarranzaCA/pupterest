@@ -1,7 +1,7 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import Login from './app/screens/login.component';
-import Home from './app/screens/home.component';
+import Login from './app/screens/login-screen';
+import Home from './app/screens/home-screen';
 
 
 
